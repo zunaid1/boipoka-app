@@ -1,13 +1,14 @@
 import React from 'react';
 import BrandLogo from '../BrandLogo/BrandLogo';
+import { Link } from 'react-router';
 
 const Navbar = () => {
 
 	const Links = <>
-		<li>Home</li>
-		<li>About</li>
-		<li>Contact</li>
-		<li>Blog</li>
+		<Link to='/'><li className=''>Home</li></Link>
+		<Link to='/about'><li className=''>About</li></Link>
+
+
 	</>
 
 

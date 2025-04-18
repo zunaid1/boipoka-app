@@ -1,15 +1,17 @@
 import React, { Suspense, use } from 'react';
 import { FaStarHalfAlt } from "react-icons/fa";
+import { Link } from 'react-router';
 
 
 const Book = ({ item }) => {
 //const data = use(bookPromise)
 
-	const { author, bookId, bookName, category, image, publisher, rating, review, totalPages, yearOfPublishing } = item;
-	console.log(item)
+	const { author, bookId, bookName, category, image, publisher, rating, review, totalPages, yearOfPublishing, tags } = item;
+	console.log(bookId)
 
 	return (
-		<div className="card bg-base-100 shadow-sm w-full border p-6">
+		<Link to={`/bookDetails/${bookId}`}>
+			<div className="card bg-base-100 shadow-sm w-full border p-6">
 			<figure className='p-4 bg-gray-100 w-2/3 mx-auto'>
 				<img
 					src={image}
@@ -17,11 +19,20 @@ const Book = ({ item }) => {
 					alt="Shoes" />
 			</figure>
 			<div className="card-body">
+					<div className='flex justify-center items-center gap-2 bg-gray-100  p-3'>
+						{
+							tags.map(tg =>
+								<span
+									className='text-xl bg-blue-200 py-2 px-3 rounded-xl text-center'>{tg}
+								</span>)
+						}
+					</div>
 				<h2 className="card-title">
 					{bookName}
-					<div className="badge badge-secondary">NEW</div>
+						<div className="badge badge-secondary">{yearOfPublishing}</div>
 				</h2>
-				<p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+					<p>Book By: {publisher}</p>
+					<div className='border-t-2 border-dashed'></div>
 				<div className="card-actions justify-end">
 					<div className="badge badge-outline">{category}</div>
 					<div className="badge badge-outline">{rating}<FaStarHalfAlt />
@@ -29,6 +40,11 @@ const Book = ({ item }) => {
 				</div>
 			</div>
 		</div>
+		</Link>
+
+
+
+
 	);
 };
 
