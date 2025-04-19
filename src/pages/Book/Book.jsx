@@ -29,11 +29,13 @@ const Book = ({ item }) => {
 					</div>
 				<h2 className="card-title">
 					{bookName}
-						<div className="badge badge-secondary">{yearOfPublishing}</div>
+					
+						<div className="badge badge-secondary">P:{totalPages}</div>
 				</h2>
 					<p>Book By: {publisher}</p>
 					<div className='border-t-2 border-dashed'></div>
 				<div className="card-actions justify-end">
+					<div className="badge badge-outline">Y:{yearOfPublishing}</div>
 					<div className="badge badge-outline">{category}</div>
 					<div className="badge badge-outline">{rating}<FaStarHalfAlt />
 					</div>
