@@ -1,6 +1,18 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoredDB } from '../../utility/addToDB';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+import { ToastContainer, toast } from 'react-toastify';
+
+
+const MySwal = withReactContent(Swal)
+
+
+
+
+
 
 const BookDetails = () => {
 	const { id } = useParams()
@@ -18,7 +30,16 @@ const BookDetails = () => {
 		//array or collection
 		// if book already exist the show  a alart
 		//if book no exist then push in the collection or array 
+
+		// MySwal.fire({
+		// 	icon: "success",
+		// 	title: "Signed in successfully"
+		//   });
+
+
 		addToStoredDB(id)
+
+
 
 
 	}

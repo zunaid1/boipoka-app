@@ -30,7 +30,7 @@ const Book = ({ item }) => {
 				<h2 className="card-title">
 					{bookName}
 					
-						<div className="badge badge-secondary">P:{totalPages}</div>
+						<div className="badge badge-secondary">P: {totalPages}</div>
 				</h2>
 					<p>Book By: {publisher}</p>
 					<div className='border-t-2 border-dashed'></div>
